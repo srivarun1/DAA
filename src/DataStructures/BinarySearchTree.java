@@ -206,6 +206,17 @@ public class BinarySearchTree {
         preorder(node.right);
     }
 
+    public void inorder(BinaryTreeNode node)
+    {
+        if(node == null)
+        {
+            return;
+        }
+        inorder(node.left);
+        System.out.print(" " + node.val);
+        inorder(node.right);
+    }
+
     public static void main(String[] args)
     {
         BinarySearchTree bt = new BinarySearchTree();
@@ -219,7 +230,7 @@ public class BinarySearchTree {
         bt.preorder(bt.root);
         bt.delete(8);
         System.out.println();
-        bt.preorder(bt.root);
+        bt.inorder(bt.root);
         System.out.println();
         System.out.println(" " + bt.search(8));
 
